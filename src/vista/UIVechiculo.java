@@ -297,8 +297,6 @@ public class UIVechiculo extends javax.swing.JDialog {
         txt_Anio.setText("");
         txt_color.setText("");
         txt_Marca.setText("");
-            System.out.println("Hola");
-
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
