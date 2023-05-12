@@ -259,7 +259,7 @@ public class UIVehiculo1 extends javax.swing.JDialog {
         }//GEN-LAST:event_button_agregarActionPerformed
 
         private void button_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_eliminarActionPerformed
-
+                
         }//GEN-LAST:event_button_eliminarActionPerformed
 
         private void button_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_actualizarActionPerformed
