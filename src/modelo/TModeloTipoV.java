@@ -22,6 +22,7 @@ public class TModeloTipoV extends AbstractTableModel {
         datos = d;
     }
    // getColumnNames(int c);
+    
 
     @Override
     public int getRowCount() {
@@ -32,6 +33,11 @@ public class TModeloTipoV extends AbstractTableModel {
     public int getColumnCount() {
         return columnas.length;
     }
+
+        @Override
+        public String getColumnName(int column) {
+                return columnas[column];// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        }
 
     @Override
     public Object getValueAt(int r, int c) {

@@ -44,6 +44,12 @@ public class TModeloVehiculo extends AbstractTableModel {
         }
 
         @Override
+        public String getColumnName(int column) {
+                return columnas[column];// 
+        }
+        
+
+        @Override
         public Object getValueAt(int r, int c) {
                 switch (c) {
                         case 0:
