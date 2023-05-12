@@ -20,7 +20,7 @@ import modelo.Vehiculo;
  *
  * @author Elias
  */
-public class UIVehiculo1 extends javax.swing.JDialog {
+public class UIVehiculo extends javax.swing.JDialog {
 
         private VehiculoJpa cvehiculo;
         private TipovehiculoJpa ctipov;
@@ -33,7 +33,7 @@ public class UIVehiculo1 extends javax.swing.JDialog {
         /**
          * Creates new form InVehiculo
          */
-        public UIVehiculo1(java.awt.Frame parent, boolean modal) {
+        public UIVehiculo(java.awt.Frame parent, boolean modal) {
                 super(parent, modal);
                 initComponents();
                 EntityManagerFactory emf = Persistence.createEntityManagerFactory("VehiculosPU");
@@ -45,7 +45,7 @@ public class UIVehiculo1 extends javax.swing.JDialog {
                 modelot.fireTableDataChanged();
                 TablaVehiculos.setModel(modelot);
                 cargartipov();
-                setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+                  setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
         }
 
         private void cargartipov() {
@@ -77,8 +77,6 @@ public class UIVehiculo1 extends javax.swing.JDialog {
                 jScrollPane1 = new javax.swing.JScrollPane();
                 TablaVehiculos = new javax.swing.JTable();
                 label_color = new javax.swing.JLabel();
-                button_eliminar = new javax.swing.JButton();
-                button_actualizar = new javax.swing.JButton();
 
                 jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -131,26 +129,6 @@ public class UIVehiculo1 extends javax.swing.JDialog {
 
                 label_color.setText("-");
 
-                button_eliminar.setBackground(new java.awt.Color(204, 204, 255));
-                button_eliminar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                button_eliminar.setForeground(new java.awt.Color(51, 0, 51));
-                button_eliminar.setText("Eliminar");
-                button_eliminar.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                button_eliminarActionPerformed(evt);
-                        }
-                });
-
-                button_actualizar.setBackground(new java.awt.Color(204, 204, 255));
-                button_actualizar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                button_actualizar.setForeground(new java.awt.Color(51, 0, 51));
-                button_actualizar.setText("Actualizar");
-                button_actualizar.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                button_actualizarActionPerformed(evt);
-                        }
-                });
-
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
                 layout.setHorizontalGroup(
@@ -185,15 +163,11 @@ public class UIVehiculo1 extends javax.swing.JDialog {
                                                 .addGap(41, 41, 41)
                                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(386, 386, 386)
-                                                .addComponent(jLabel1))
+                                                .addGap(295, 295, 295)
+                                                .addComponent(button_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(201, 201, 201)
-                                                .addComponent(button_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(64, 64, 64)
-                                                .addComponent(button_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(73, 73, 73)
-                                                .addComponent(button_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(386, 386, 386)
+                                                .addComponent(jLabel1)))
                                 .addContainerGap(69, Short.MAX_VALUE))
                 );
                 layout.setVerticalGroup(
@@ -207,7 +181,9 @@ public class UIVehiculo1 extends javax.swing.JDialog {
                                         .addGroup(layout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(170, 170, 170))
+                                                .addGap(52, 52, 52)
+                                                .addComponent(button_agregar)
+                                                .addGap(83, 83, 83))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(43, 43, 43)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,12 +209,7 @@ public class UIVehiculo1 extends javax.swing.JDialog {
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                                         .addComponent(jLabel6)
                                                                         .addComponent(combo_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(button_agregar)
-                                                        .addComponent(button_eliminar)
-                                                        .addComponent(button_actualizar))
-                                                .addGap(83, 83, 83))))
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 );
 
                 pack();
@@ -246,25 +217,17 @@ public class UIVehiculo1 extends javax.swing.JDialog {
 
         private void button_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_agregarActionPerformed
                 vehiculo = new Vehiculo();
-                if (!txt_Placa.getText().trim().equalsIgnoreCase("")) {
-                        vehiculo.setPlaca(txt_Placa.getText());
-                        vehiculo.setColor((String) Combo_color.getSelectedItem());
-                        vehiculo.setAnio((Integer) Spin_año.getValue());
-                        vehiculo.setMarca((String) Combo_marca.getSelectedItem());
-                        vehiculo.setTipo(tiposv.get(combo_tipo.getSelectedIndex()));
-                        cvehiculo.create(vehiculo);
-                        modelot.fireTableDataChanged();
-                        tipos.add(vehiculo);
-                }
+                    if (!txt_Placa.getText().trim().equalsIgnoreCase("")) {
+                vehiculo.setPlaca(txt_Placa.getText());
+                vehiculo.setColor((String) Combo_color.getSelectedItem());
+                vehiculo.setAnio((Integer) Spin_año.getValue());
+                vehiculo.setMarca((String) Combo_marca.getSelectedItem());
+                vehiculo.setTipo(tiposv.get(combo_tipo.getSelectedIndex()));
+                cvehiculo.create(vehiculo);
+                modelot.fireTableDataChanged();
+                tipos.add(vehiculo);
+                    }
         }//GEN-LAST:event_button_agregarActionPerformed
-
-        private void button_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_eliminarActionPerformed
-                
-        }//GEN-LAST:event_button_eliminarActionPerformed
-
-        private void button_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_actualizarActionPerformed
-                // TODO add your handling code here:
-        }//GEN-LAST:event_button_actualizarActionPerformed
 
         /**
          * @param args the command line arguments
@@ -283,18 +246,14 @@ public class UIVehiculo1 extends javax.swing.JDialog {
                                 }
                         }
                 } catch (ClassNotFoundException ex) {
-                        java.util.logging.Logger.getLogger(UIVehiculo1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                        java.util.logging.Logger.getLogger(UIVehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                 } catch (InstantiationException ex) {
-                        java.util.logging.Logger.getLogger(UIVehiculo1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                        java.util.logging.Logger.getLogger(UIVehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                 } catch (IllegalAccessException ex) {
-                        java.util.logging.Logger.getLogger(UIVehiculo1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                        java.util.logging.Logger.getLogger(UIVehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                 } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                        java.util.logging.Logger.getLogger(UIVehiculo1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                        java.util.logging.Logger.getLogger(UIVehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                 }
-                //</editor-fold>
-                //</editor-fold>
-                //</editor-fold>
-                //</editor-fold>
                 //</editor-fold>
                 //</editor-fold>
                 //</editor-fold>
@@ -303,7 +262,7 @@ public class UIVehiculo1 extends javax.swing.JDialog {
                 /* Create and display the dialog */
                 java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
-                                UIVehiculo1 dialog = new UIVehiculo1(new javax.swing.JFrame(), true);
+                                UIVehiculo dialog = new UIVehiculo(new javax.swing.JFrame(), true);
                                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                                         @Override
                                         public void windowClosing(java.awt.event.WindowEvent e) {
@@ -320,9 +279,7 @@ public class UIVehiculo1 extends javax.swing.JDialog {
         private javax.swing.JComboBox<String> Combo_marca;
         private javax.swing.JSpinner Spin_año;
         private javax.swing.JTable TablaVehiculos;
-        private javax.swing.JButton button_actualizar;
         private javax.swing.JButton button_agregar;
-        private javax.swing.JButton button_eliminar;
         private javax.swing.JComboBox<String> combo_tipo;
         private javax.swing.JComboBox<String> jComboBox1;
         private javax.swing.JLabel jLabel1;
