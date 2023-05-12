@@ -165,7 +165,9 @@ public class UITipoVehiculo extends javax.swing.JDialog {
             ctv.create(tipov);//insertar objeto de CLASE VEHICULO
             tipos.add(tipov);
             modelot.fireTableDataChanged();
+            
         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txt_tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tipoActionPerformed
